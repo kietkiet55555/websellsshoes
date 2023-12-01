@@ -1,0 +1,90 @@
+/* Thiết lập font chung cho trang */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: rgba(20, 195, 218, 0.589);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Container chứa bảng sản phẩm và thông tin khách hàng */
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+/* Bảng sản phẩm (Bên trái) */
+.product-list {
+    flex: 1;
+    margin-right: 20px;
+    background-color: #1ea9ab;
+}
+
+.product-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-list table th, .product-list table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.product-list table th {
+    background-color: #333;
+    color: #fff;
+}
+
+.product-list table td {
+    background-color: #f9f9f9;
+}
+
+/* Bảng thông tin của bạn (Bên phải) */
+.customer-info {
+    flex: 1;
+    background-color: #afafaf;
+}
+
+.customer-info form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #858585;
+}
+
+.customer-info label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.customer-info input[type="text"],
+.customer-info input[type="tel"],
+.customer-info textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.customer-info input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.customer-info input[type="submit"]:hover {
+    background-color: #555;
+}.customer-info footer{
+    margin-bottom: 5px;
+}
+
+
