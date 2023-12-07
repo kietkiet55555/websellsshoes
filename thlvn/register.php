@@ -124,6 +124,31 @@
             top: 500px; 
             left:30px;
         }
+        .footer{
+        background:#EEDCDC;
+        height: 132px;
+        /* padding: 0;
+        margin:0; */
+        }
+        .footer hr{
+        background:#979113;
+        height: 1px;
+        }
+        #contact {
+        height: 100px;
+
+        }
+        #contact p{
+        text-align: center;
+        line-height: 8vh;
+        }
+        #tenweb{
+        height: 30px;
+        line-height: 1vh;
+        }
+        #tenweb{
+        text-align: center;
+        }
     </style>
 </head>
 
@@ -192,7 +217,7 @@
                                             VALUES ('".$account."', '". $password."', '".$fullname."', '".$numberphone."', '".$live."', '".$identify."');";
                                             $queryInsert= mysqli_query($conn, $cmdInsert);
                                             echo "<script> 
-                                            alert('Đăng ký thành công, Vui lòng đăng nhập để tiếp tục');
+                                            alert('Đăng ký thành công');
                                             window.location='login.php';
                                             </script>";
                                         }
@@ -227,6 +252,12 @@
 
                    
         </div>
+        <div class="footer">
+        <div id="contact" class="fixsite"><p>Địa chỉ:  Số 30, đường An Dương Vương, phường  Nhơn Phú, tp Quy Nhơn.<br>
+                                        Số điện thoại: 034747382. </div>
+                    <hr>
+                    <div id="tenwb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
+    </div>
 </body>
 </html>
 

@@ -391,12 +391,13 @@
         height: 1px;
         }
         #contact {
-        height: 100px;
+        height: 80px;
 
         }
         #contact p{
         text-align: center;
-        line-height: 8vh;
+        line-height: 7vh;
+        color:black;
         }
         #nameweb{
         height: 30px;
@@ -628,7 +629,7 @@
             height:447px;
             /* padding: 20px;  */
             display:flex;
-            background-color: #f2f2f2; /* Màu nền */
+            background-color: #ffffff; /* Màu nền */
             /* border: 2px solid #333;  */
             /* border-radius: 15px; */
             text-align: center; /* Căn giữa nội dung */
@@ -703,6 +704,16 @@
             border:15px;
             margin:2px 0 0 0;
         }
+        #areaIn4 ul{
+            position: absolute; 
+         top:170px;
+            right: 280px; 
+        }
+        #areaIn4 input{
+            width: 350px;
+            height:40px;
+            margin-bottom:20px;
+        }
         #thanh{
             height: 120px;
             background:#F9F7F3;
@@ -741,7 +752,7 @@
             overflow: auto;
         }
         #aProductBuy li{
-            margin-right: 100px;
+            margin-right: 150px;
             list-style-type: none; 
         }
         #aProductBuy img {
@@ -753,6 +764,18 @@
             width: 100%;
             height:447px;
         } */
+        #tieude {
+            font-size:24px;
+            text-align:left;
+            /* margin-top:10px; */
+        }
+        #tenweb{
+        height: 30px;
+        line-height: 1vh;
+        color:#D47373;
+        text-align: center;
+        }
+       
 
     </style>
 </head>
@@ -835,7 +858,7 @@
                     <div class="operation">
                             <form action="find.php" class="execfind" method="get">
                                         <div class="combb"  >   
-                                            <div id="iconsoftdown">  <img src="./img/sort-down.png" width="20px"  height="20px"  alt="">  </div> 
+                                         
                                             <select id="combobox-options" name="choose">
                                                     <option value="thuonghieu"  <?php 
                                                         if ((isset($_SESSION['bandOrCode'])) && ($_SESSION['bandOrCode'] == "thuonghieu")) {
@@ -946,6 +969,7 @@
                                 //     echo "Error executing query: " . mysqli_error($conn);
                                 //     // Additional code for handling the case when $kqkt is not successful
                                 // }
+                                unset($_SESSION['tongtien']);
                                         if($row2 = mysqli_fetch_array($kqkt))
                                         {
                                          
@@ -965,10 +989,12 @@
                                                 echo "<ul>";
                                                 echo "<li>   <img src='./img/".$row3['thuonghieu']."/".$row3['anhgiay']."'  alt=''>  </li>";
                                                 echo "<li> ".$row2['tensp']." </li>";
-                                                echo "<li>  ".$row2['soluong']*$row2['giaban']." </li>";
+                                         
+                                                echo "<li>  ".$row2['soluong']*$row3['giaban']." </li>";
                                                 echo " </ul>";
                                                 echo " </div>";
-
+                                                $_SESSION['tongtien'] = $row2['soluong']*$row3['giaban'];
+                                               
                                              }
                                           
                                         }
@@ -988,7 +1014,7 @@
   
     <div id="areaIn4">
         <ul>
-                <li> Thông tin của bạn</li>
+                <li id="tieude"> Thông tin của bạn</li>
             <?php
                             
                         //    if(isset($_GET['sb']))
@@ -1008,9 +1034,8 @@
                                         echo "<li> <input type='text' name = 'nu' value='".$row2['numberphone']."'> </li>";
                                         echo "<li> <input type='text' name = 'site' value='".$row2['site']."'> </li>";
                                         echo "<li> <input type='text' name ='cccd'  value='".$row2['identify']."'> </li>";
+                                  
                                     }
-                                //  }
-                            // }
 
             ?>
         </ul>
@@ -1019,29 +1044,27 @@
 </div>
 <form action="bangiay.php" method="get">
     <div id="thanhtoan">
+     
             <ul>
-                <li>Tổng giày</li>
-                <li>Tổng Tiền</li>
-                <li><input type="submit" name=" mua" value="Đặt hàng"></li>
+             
+                <li>Tổng Tiền </li>
+                <li>  <?php if(isset($_SESSION['tongtien']) ) echo $_SESSION['tongtien']."đ";?> </li>
+                <li><input type="submit" id="dathang" name="mua" value="Đặt hàng"></li>
                 
             </ul>
     </div>
+
+
     </form>
                 
-                <div id="numpage">
-                    <div class="seprapage">
-                    <?php
- 
-                    ?>  
-                    </div>
-                </div>
+            
  
     </div>
     <div class="footer">
         <div id="contact" class="fixsite"><p>Địa chỉ:  Số 30, đường An Dương Vương, phường  Nhơn Phú, tp Quy Nhơn.<br>
                                         Số điện thoại: 034747382. </div>
                     <hr>
-                    <div id="nameweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
+                    <div id="tenweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
     </div>
 </body>
 

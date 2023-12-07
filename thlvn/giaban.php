@@ -355,30 +355,34 @@
             background:#4788D4;
         }
         .footer{
-        background:#EEDCDC;
+            background:#EEDCDC;
         height: 132px;
-        padding-top: 0;
-        margin-top:0;
+        /* padding-top: 0;
+        margin-top:0; */
+        display: inline-block;
+        width: 100%;
         }
         .footer hr{
         background:#979113;
         height: 1px;
         }
         #contact {
-        height: 100px;
+        height: 80px;
 
         }
         #contact p{
         text-align: center;
-        line-height: 8vh;
+        line-height: 7vh;
+        color:black;
         }
-        #nameweb{
+  
+            #tenweb{
         height: 30px;
         line-height: 1vh;
-        }
-        #nameweb{
+        color:#D47373;
         text-align: center;
         }
+       
         #numpage{
             height: 75px;
             width: 100%;
@@ -418,6 +422,16 @@
         text-decoration: none;
         color: black;
     }
+    #thanh{
+
+width: 0.8px;
+border: none;
+height: 40px;
+background-color: #333;
+margin:  0;
+box-sizing: content-box; /* Reset box sizing if needed */
+
+}
     </style>
 </head>
 <?php 
@@ -565,6 +579,7 @@
     <div class="tab">
         <ul id="tabfilter">
             <li id="locgiay">Lọc giày</li>
+            <li><hr id="thanh"></li>
             <a href="giaban.php"><li>Giá bán</li></a>
             <a href="nuocsx.php"><li>Nước sản xuất</li></a>
             <a href="theloai.php"><li>Thể loại</li></a> 
@@ -810,7 +825,7 @@
             <div id="contact" class="fixsite"><p>Địa chỉ:  Số 30, đường An Dương Vương, phường  Nhơn Phú, tp Quy Nhơn.<br>
                                             Số điện thoại: 034747382. </div>
                         <hr>
-                        <div id="nameweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
+                        <div id="tenweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
          </div>
 </body>
 </html>

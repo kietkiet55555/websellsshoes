@@ -365,12 +365,11 @@
             text-align: center;
             line-height: 8vh;
         }
-        #nameweb{
-            height: 30px;
-            line-height: 1vh;
-        }
-        #nameweb{
-            text-align: center;
+        #tenweb{
+        height: 30px;
+        line-height: 1vh;
+        color:#D47373;
+        text-align: center;
         }
         .fixsite{
             /* position: absolute; 
@@ -454,11 +453,15 @@
     list-style: none;
     padding: 0;
     text-align: left;
+    height: 680px;
+  
 
 }
 
 .form-list li {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    width: 600px;
+    height: 40px;
 }
 
 label {
@@ -483,8 +486,8 @@ input[type="text"]
 
 }
 #label_hinh_anh{
-    width: 100px;
-    height: 25px;
+    width: 120px;
+            height: 40px;
     background:#D0C7C7;
     text-align:center;
     align-items: center;
@@ -492,7 +495,7 @@ input[type="text"]
     display: inline-block;
     border: 2px solid black; /* Set the border to a solid black line */
     border-radius: 5px;
-    line-height: 1.5;
+    line-height: 3;
 
 }
     #duoi{
@@ -508,26 +511,29 @@ input[type="text"]
     #classify{
         background:#D3CECE;
         width: 100%;
-        height: 627px;
+        height: 777px;
 
     }
     .footer{
-        background:#EEDCDC;
+            background:#EEDCDC;
         height: 132px;
-        padding: 0;
-        margin:0;
+        padding-top: 0;
+        margin-top:0;
+        display: inline-block;
+        width: 100%;
         }
         .footer hr{
         background:#979113;
         height: 1px;
         }
         #contact {
-        height: 100px;
+        height: 80px;
 
         }
         #contact p{
         text-align: center;
-        line-height: 8vh;
+        line-height: 7vh;
+        color:black;
         }
         #nameweb{
         height: 30px;
@@ -546,6 +552,74 @@ input[type="text"]
             height: 30px;
             /* position: absolute;  
                 left: 60px;  */
+        }
+        #ten_giay {
+            width: 400px;
+            height: 40px;
+        }
+        #ma_giay  {
+            width: 400px;
+            height: 40px;
+        }
+        #hieu_giay {
+            width: 400px;
+            height: 40px;
+        }
+        #color{
+            width: 150px;
+            height: 40px;
+        }
+        #num{
+            width: 150px;
+            height: 40px;
+        }
+        #size{
+            width: 150px;
+            height: 40px;
+        }
+        #gia_ban{
+            width: 400px;
+            height: 40px;
+        }
+        #the_loai{
+            width: 400px;
+            height: 40px;
+        }
+        #nuoc_san_xuat{
+            width: 400px;
+            height: 40px;
+        }
+         #lbinput{
+            width: 1000px;
+            height: 40px;
+        }
+        #btnadd{
+            width: 250px;
+            height: 40px;
+            background: #D0C7C7;
+            border-radius: 3px;
+        }
+        /* #duoi form{
+            overflow:auto;
+        }  */
+        #button{
+            width: 300px;
+            height: 40px;
+            padding: 10px 15px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #D0C7C7;
+
+            cursor: pointer;
+        }
+        .mau_sac_entry {
+            display:flex;
+            width: 700px;
+        }
+        .mau_sac_entry input{
+           
+            margin-left:15px;
         }
 
     </style>
@@ -748,7 +822,6 @@ input[type="text"]
 
 
 
-
          }
 
         }
@@ -760,25 +833,25 @@ input[type="text"]
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method='post' enctype="multipart/form-data">
                     <ul class="form-list">
                         <li>
-                            <label for="ma_giay">Mã Giày:</label>
-                            <input type="text" id="ma_giay" name="ma_giay" placeholder="Nhập mã giày" required>
+                            <label for="ma_giay">Mã Giày</label>
+                            <input  type="text" id="ma_giay"  name="ma_giay" placeholder="Nhập mã giày" required>
 
                         </li>
 
                 
                         <li>
-                            <label for="ten_giay">Tên Giày:</label>
-                            <input type="text" id="ten_giay" name="ten_giay" placeholder="Tên giày nhập (không quá 50 kí tự)" required>
+                            <label for="ten_giay">Tên Giày</label>
+                            <input  type="text" id="ten_giay" name="ten_giay" placeholder="Tên giày nhập (không quá 50 kí tự)" required>
 
                         </li>
 
                         <li>
-                            <label for="hieu_giay">Thương Hiệu:</label>
+                            <label for="hieu_giay">Thương Hiệu</label>
                             <input type="text" id="hieu_giay" name="hieu_giay" required>
                         </li>
 
                         <li>
-                        <label for="hinh_anh">Tải lên:</label>
+                        <label for="hinh_anh">Tải lên</label>
                         <input type="file" id="hinh_anh" title="chọn ảnh" hidden name="hinh_anh" accept="image/*" required>
                         <label for="hinh_anh" id="label_hinh_anh">Chọn ảnh</label>
                         <span id="file_name"><?php echo isset($_GET['anhgiay']) ? $_GET['anhgiay'] : ''; ?></span>
@@ -798,21 +871,22 @@ input[type="text"]
                         </li>
 
                         <li>
-                            <label for="mau_sac">Màu sắc, số lượng, kích cỡ </label>
+                            
                             <div id="mau_sac_entries">
                             <div class="mau_sac_entry">
-                                <input type="text" class="mau_sac" name="mau_sac[]" placeholder="Màu sắc" required>
-                                <input type="text" class="so_luong" name="so_luong[]" placeholder="Số lượng" required>
-                                <input type="text" class="kich_co" name="kich_co[]" placeholder="Kích cỡ" required>
+                            <label id="lbinput" for="mau_sac">Màu sắc, số lượng, kích cỡ giày</label>
+                                <input type="text" id="color" class="txbadd" name="mau_sac[]" placeholder="Màu sắc" required>
+                                <input type="text" id="num" class="txbadd" name="so_luong[]" placeholder="Số lượng" required>
+                                <input type="text" id="size" class="txbadd" name="kich_co[]" placeholder="Kích cỡ" required>
                             
                             </div>
                             </div>
                         </li>
 
                                                                     
-
-                        <li class="button-li">
-                            <button type="button" onclick="addMauSacEntry()">Thêm màu sắc, số lượng, kích cỡ</button>
+                        <br>
+                        <li class="buttonli">
+                            <button type="button" id="btnadd" onclick="addMauSacEntry()">Thêm màu sắc, số lượng, kích cỡ giày</button>
                         </li>
                         <script>
                                 function addMauSacEntry() {
@@ -820,9 +894,9 @@ input[type="text"]
                                     var newMauSacEntry = document.createElement('div');
                                     newMauSacEntry.innerHTML = `
                                         <div class="mau_sac_entry">
-                                            <input type="text" class="mau_sac" name="mau_sac[]" placeholder="Màu sắc" required>
-                                            <input type="text" class="so_luong" name="so_luong[]" placeholder="Số lượng" required>
-                                            <input type="text" class="kich_co" name="kich_co[]" placeholder="Kích cỡ" required>
+                                            <input type="text" id="color" class="txbadd" name="mau_sac[]" placeholder="Màu sắc" required>
+                                            <input type="text"  id="num" class="txbadd" name="so_luong[]" placeholder="Số lượng" required>
+                                            <input type="text"  id="size" class="txbadd" name="kich_co[]" placeholder="Kích cỡ" required>
                                         </div>
                                     `;
                                     mauSacEntries.appendChild(newMauSacEntry);
@@ -830,7 +904,7 @@ input[type="text"]
 
                      </script>
                         <li>
-                            <label for="gia_ban">Giá bán:</label>
+                            <label for="gia_ban">Giá bán</label>
                             <input type="text" id="gia_ban" name="gia_ban" required>
                         </li>
                         
@@ -840,7 +914,7 @@ input[type="text"]
                         </li>
 
                         <li>
-                            <label for="nuoc_san_xuat">Nước sản xuất:</label>
+                            <label for="nuoc_san_xuat">Nước sản xuất</label>
                             <input type="text" id="nuoc_san_xuat" name="nuoc_san_xuat" required>
                         </li>
 
@@ -857,7 +931,7 @@ input[type="text"]
         <div id="contact" class="fixsite"><p>Địa chỉ:  Số 30, đường An Dương Vương, phường  Nhơn Phú, tp Quy Nhơn.<br>
                                         Số điện thoại: 034747382. </div>
                     <hr>
-                    <div id="nameweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
+                    <div id="tenweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
     </div>
                     
   

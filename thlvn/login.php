@@ -70,6 +70,7 @@
             height:663px;
             width: 100%;
             display: flex;
+            /* margin-bottom:0; */
         }
         #formregister{
             width: 470px;
@@ -80,6 +81,11 @@
             right: 50px; 
             top:200px;
        
+        }
+        #formregister input{
+            width: 400px;
+            height:50px;
+
         }
         .text{
             width: 350px;
@@ -149,8 +155,13 @@
     }
      /* Thiết lập kiểu dáng cho nút Đăng kí */
      #registerButton {
-      background-color: #4CAF50; /* Màu xanh lá cây */
-      color: greenyellow;
+        background-color: #D0E9B0; /* Màu xanh lá cây */
+        color: yellow;
+        width: 350px;
+            height: 40px;
+        color:#C20B0B;
+        border:1px;
+        font-size:19px;
     }
 
     /* Thiết lập kiểu dáng cho nút Đăng nhập */
@@ -161,12 +172,74 @@
     .center {
       text-align: center;
       margin-top: 140px;
+      position: absolute; 
+            top: 225px; 
+            left: 30px; 
       
     }
     
-element.style {
-   
+   #dangky {
+    font-size:16px;
+    color:#3120EF;
+
+
 }
+.footer{
+        background:#EEDCDC;
+        height: 132px;
+        /* padding-top: 0;
+        margin-top:0; */
+        display: inline-block;
+        width: 100%;
+       
+        }
+        .footer hr{
+        background:#979113;
+        height: 1px;
+        }
+        #contact {
+        height: 80px;
+
+        }
+        #contact p{
+        text-align: center;
+        line-height: 7vh;
+        color:black;
+        }
+        #tenweb{
+
+        }
+        #tenweb p{
+            height: 30px;
+        line-height: 0;
+        color:#D47373;
+        text-align: center;
+        margin-top:0px;
+        
+        }
+
+        #anh{
+            text-align: center;
+            /* position: absolute; 
+            top: 25px; 
+            left: 30px;  */
+
+        }
+        #anh img{
+            width:150px;
+            height:160px;
+
+        }
+        #imgtextbox{
+            display:block
+        }
+        /* #nameweb{
+        height: 30px;
+        line-height: 1vh;
+        }
+        #nameweb{
+        text-align: center;
+        } */
     </style>
 </head>
 <?php
@@ -223,6 +296,7 @@ if(isset($_POST['dangnhap']))
                         <button id="btnhome">
                             <div class="imglogo"> <img src="./img/logo.jpg" width="90px"  height="102px"  alt="logo"  > </div> 
                             <div class="nameweb" > Web <br> sells <br> shoes </div>
+
                         </button>
                        
             </div>
@@ -237,21 +311,36 @@ if(isset($_POST['dangnhap']))
                     </div>
                     <div id="formregister">
                         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                            <p> Đăng Nhập</p>
-                            <img style=" width: 100px; text-align: center;" src="./img/locksmith.png">
-                            <br>
+                         
+                        <div id="imgtextbox">
+                            <div id="anh">
+                            <img   src="./img/locksmith.png" alt=""> 
+                            </div>  
+                            <div>
                             <input type="text" class="text" name="namelogin" placeholder="Tên tài khoản"> <br>
                             <input type="text" class="text" name="password" placeholder="Mật khẩu"> <br>
+                            </div>
+                        </div>
+               
+                         
                         
                             <div class="center">
 
                             <input id="registerButton" type="submit" value="Đăng nhập" name="dangnhap">
                             <br></br>
-                            <a style="text-decoration: none;"href="register.php">Đăng Kí</a>
+                            <a  id="dangky" style="text-decoration: none;"href="register.php">Đăng Ký</a>
                             </div>
                         </form>
                  
                     </div>
 </div>
+<div class="footer">
+        <div id="contact" ><p>Địa chỉ:  Số 30, đường An Dương Vương, phường  Nhơn Phú, tp Quy Nhơn.<br>
+                                        Số điện thoại: 034747382. </div>
+                    <hr>
+                    <div id="tenweb" ><p>Twoteam-WebSellsShoes</p>
+                    </div>
+</div>
+            
 </body>
 </html>

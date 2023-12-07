@@ -305,22 +305,25 @@
             margin-top:7px;
         }
         .footer{
-        background:#EEDCDC;
+            background:#EEDCDC;
         height: 132px;
-        padding: 0;
-        margin:0;
+        /* padding-top: 0;
+        margin-top:0; */
+        display: inline-block;
+        width: 100%;
         }
         .footer hr{
         background:#979113;
         height: 1px;
         }
         #contact {
-        height: 100px;
+        height: 80px;
 
         }
         #contact p{
         text-align: center;
-        line-height: 8vh;
+        line-height: 7vh;
+        color:black;
         }
         #nameweb{
         height: 30px;

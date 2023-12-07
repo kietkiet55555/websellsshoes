@@ -4,7 +4,22 @@
         else $selected='thuonghieu';
         $_SESSION['bandOrCode'] =  $selected;
     //  echo $_SESSION['username'] = 'abc';
+    if(isset($_GET['thaotac']))
+    {
+        $conn = mysqli_connect("localhost", "root", "", "db.websellsshoes");
+        $cmdde = " DELETE FROM giohang where id = '".$_GET['id']."'";
+        $queryde = mysqli_query($conn, $cmdde);
+        
+                                // if ($queryde !== false) {
+                                //     echo "Query executed successfully";
+                                //     // Additional code for handling the case when $kqkt is successful
+                                //     // You might fetch results or perform other operations here
+                                // } else {
+                                //     echo "Error executing query: " . mysqli_error($conn);
+                                //     // Additional code for handling the case when $kqkt is not successful
+                                // }
 
+    }
 
 
 ?>
@@ -314,30 +329,33 @@
             margin-top:7px;
         }
         .footer{
-        background:#EEDCDC;
+            background:#EEDCDC;
         height: 132px;
-        padding: 0;
-        margin:0;
+        padding-top: 0;
+        margin-top:0;
+        display: inline-block;
+        width: 100%;
         }
         .footer hr{
         background:#979113;
         height: 1px;
         }
         #contact {
-        height: 100px;
+        height: 80px;
 
         }
         #contact p{
         text-align: center;
-        line-height: 8vh;
+        line-height: 7vh;
+        color:black;
         }
-        #nameweb{
+        #tenweb{
         height: 30px;
         line-height: 1vh;
-        }
-        #nameweb{
+        color:#D47373;
         text-align: center;
         }
+    
         #numpage{
             height: 70px;
             width: 100%;
@@ -346,7 +364,7 @@
             background:#ffffff;
               
             width: 100%;
-            height:620px;
+            height:580px;
         }
 
     .pagination {
@@ -562,7 +580,7 @@
             height:447px;
             /* padding: 20px;  */
             /* display:flex; */
-            background-color: #f2f2f2; /* Màu nền */
+            background-color: #ffffff; /* Màu nền */
             /* border: 2px solid #333;  */
             /* border-radius: 15px; */
             text-align: center; /* Căn giữa nội dung */
@@ -572,10 +590,11 @@
         }
         #sp{
             margin-top: 20px;
-            background:#B9B1B1;
+            background:#EAE8E8;
             height: 120px;
             width: 100%;
             display:block;
+            border-radius:1px black;
         }
         #sp ul{
             display:flex;
@@ -623,23 +642,29 @@
         }
         #fd{
             display:flex;
+            justify-content: center; /* Horizontally center */
+            align-items: center; /* Vertically center */
+            text-align: center; /* Center text */
+           display:flex;
         }
         #fd a{
             text-decoration: none; 
             width:60px;
             height: 40px;
-            background: #DFD9D9;
+            background: #ADA7A7;
             margin:5px;
             color:black;
-          
-            text-align:center;
+            justify-content: center; /* Horizontally center */
+            align-items: center; /* Vertically center */
+            text-align: center; /* Center text */
+           display:flex;
 
             border-radius:3px;
 
         }
         #mh {
             color:white;
-            background:red;
+            background:#CB3434;
             width: 120px;
             height: 30px;
             border: 1px solid red;
@@ -730,7 +755,7 @@
                     <div class="operation">
                             <form action="find.php" class="execfind" method="get">
                                         <div class="combb"  >   
-                                            <div id="iconsoftdown">  <img src="./img/sort-down.png" width="20px"  height="20px"  alt="">  </div> 
+                                          
                                             <select id="combobox-options" name="choose">
                                                     <option value="thuonghieu"  <?php 
                                                         if ((isset($_SESSION['bandOrCode'])) && ($_SESSION['bandOrCode'] == "thuonghieu")) {
@@ -924,14 +949,14 @@
 
                                     // echo " <li><input type='text' hidden  name='arrnum[]' value='".$row['id']."'  ></li> ";
                                   
-
+                                           
                                             echo '<li> <p> '.$row['tensp'].'</p></li>';
 
                                             echo '<li><p> Màu sắc: '.$row['mausac'] .' </p> <p> Kích cỡ: '.$row['kichco'].' </p></li>';
                                             echo ' <li> <p>'.$row2['giaban'].' </p> </li>';
                                             echo '<li> '.$row['soluong'].' </li>';
                                             echo ' <li> '.$row['soluong']*$row2['giaban'].' </li>';
-                                            echo "<li id = 'fd'>  <a href='suagiay.php?".$row['tensp']."'>sửa</a> 
+                                            echo "<li id = 'fd'>  <a href='suagiay.php?tensp=".$row['tensp']."'>sửa</a> 
                                              <a  href='giohang.php?thaotac=xoa&id=".$row['id']."&tensp=".$row['tensp']."&color=".$row['mausac']."&soluong=".$row['soluong']."&size=".$row['kichco']."'>xóa</a></li>";
                                             echo '</ul>';
                                             echo '</div>';
@@ -958,7 +983,7 @@
                 <input type="submit" id = "mh" name="sb" value="Mua hàng">
             </ul>
     </div>
-                
+         
     </form>         
  
     </div>
@@ -966,7 +991,7 @@
         <div id="contact" class="fixsite"><p>Địa chỉ:  Số 30, đường An Dương Vương, phường  Nhơn Phú, tp Quy Nhơn.<br>
                                         Số điện thoại: 034747382. </div>
                     <hr>
-                    <div id="nameweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
+                    <div id="tenweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
     </div>
 </body>
 

@@ -245,8 +245,8 @@
 
         .areashowshoes{
         
-            width: 90%;
-            height:90%;
+            width: 94%;
+            height:85%;
             display : flex;
             flex-direction : row ;
             /* justify-content : space-around; */
@@ -254,8 +254,8 @@
           background:#ffffff;
             border-radius:10px;
             position: absolute; 
-            top: 180px; 
-            left: 50px; 
+            top: 170px; 
+            left: 40px; 
            
         }
         #notfound{
@@ -308,37 +308,40 @@
             margin-top:7px;
         }
         .footer{
-        background:#EEDCDC;
+            background:#EEDCDC;
         height: 132px;
-        padding: 0;
-        margin:0;
+        /* padding-top: 0;
+        margin-top:0; */
+        display: inline-block;
+        width: 100%;
         }
         .footer hr{
         background:#979113;
         height: 1px;
         }
         #contact {
-        height: 100px;
+        height: 80px;
 
         }
         #contact p{
         text-align: center;
-        line-height: 8vh;
+        line-height: 7vh;
+        color:black;
         }
-        #nameweb{
+        #tenweb{
         height: 30px;
         line-height: 1vh;
-        }
-        #nameweb{
+        color:#D47373;
         text-align: center;
         }
+    
         #numpage{
             height: 70px;
             width: 100%;
         }
         #frame{
             background:#CEC8C8;
-              
+      
             width: 100%;
             height:620px;
         }
@@ -396,58 +399,68 @@
         font-size:30px;
     }
     #size {
-        position: absolute;   
-        /* top: 120px;  */
-        font-size:20px;
-       /* left:425px; */
-       font-weight: bold;
-        /* height:40px; */
+       /* position: absolute;   
+     
+        font-size:20px; */
+/*       
+       font-weight: bold;  */
+       text-align: center;
+            align-items: center; 
+            /* justify-content: center;  */
+      
     }
-    #areaSize {
-            list-style: none; 
-            display: flex;
-    
-            position: absolute;   
+
+    #btnSize {
+        
+        position: absolute;   
             top: 120px; 
             left:425px;
-            margin: 0;
-            padding: 0;
-      
-            width: 600px;
+            display: flex;
+           text-align:left;
+           border:1px solid white;
+           display:flex;
+           /* margin: 0;
+            padding: 0; */
+            width: 500px;
             height: 40px;
+            /* background:red; */
     }
-    #btnSize {
-        position: absolute;   
-            top: 0px; 
-            left:45px; 
-            margin-top: 0px;  
-            font-weight: bold;
-    }
+
     #btnSize ul{
         display: flex;
+        /* list-style-type: none;
+            padding: 0; */
+     
     }
     #btnSize li {
-          text-align:center;
-            /* border: 2px black solid; */
+           text-align:center;
+           
             display:flex;
             line-height: 2;
             margin-right: 10px; 
-            width: 70px;
+            width: 80px;
             height:40px;
+           
+            
     }
     #btnSize a{
             text-decoration: none;
             color:black;
-            width: 70px;
+            width: 80px;
             height:40px;
             background:#ECE8E8;
+            text-align: center;
+            align-items: center; 
+            display:flex;
+            justify-content: center; 
+            font-weight: bold;
         }
         #btnSize a:hover{
             background:#D2CCCC;
         }
         #areaMauSac{
             position: absolute;   
-            top: 230px; 
+            top: 210px; 
             font-size:20px;
             left:425px;
             font-weight: bold;
@@ -456,12 +469,20 @@
             width: 600px;
             height: 40px;
         }
+        #MauSac{
+            width: 200px;
+            height: 40px;
+           
+            /* position: absolute;   
+            top: 0px; 
+            left:5px;  */
+        }
 
         #btnMauSac {
-        position: absolute;   
+        /* position: absolute;   
             top: 0px; 
             left:45px; 
-            margin-top: 0px;  
+            margin-top: 0px;   */
             
     }
     #btnMauSac ul{
@@ -473,24 +494,28 @@
             display:flex;
             line-height: 2;
             margin-right: 10px; 
-            width: 70px;
+            width: 80px;
             height:40px;
     }
     #btnMauSac a{
-            text-decoration: none;
+        text-decoration: none;
             color:black;
-             width: 70px;
+            width: 80px;
             height:40px;
             background:#ECE8E8;
+            text-align: center;
+            align-items: center; 
+            display:flex;
+            justify-content: center; 
         }
         #btnMauSac a:hover{
             background:#D2CCCC;
         }
     #areaSoLuong {
         position: absolute;   
-        top: 340px; 
+        top: 300px; 
         font-size:20px;
-        left:425px;
+        left:455px;
         font-weight: bold;
     }
     #btnChange{
@@ -506,12 +531,33 @@
         height: 40px;
        
     }
-    #addInCart, #buy {
+    #buy{
+        width: 130px ;
+        height: 50px;
+        background:#8CDD8F;
+    
+            border-radius: 5px;
+            margin-left:30px;
+    }
+    #buy a{
+        width: 130px ;
+        height: 50px;
+        color: black;
+        border-radius: 5px;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+            align-items: center; 
+            display:flex;
+            justify-content: center; 
+    }
+
+    #addInCart {
     display: inline-block;
     margin: 10px;
     }
 
-    #addInCart a, #buy a {
+    #addInCart a {
         text-decoration: none;
         padding: 10px 20px;
         background-color: #8DD790;
@@ -520,7 +566,7 @@
         font-weight: bold;
     }
 
-    #addInCart a:hover, #buy a:hover {
+    #addInCart a:hover {
         background-color: #2980b9;
     }
     
@@ -560,7 +606,33 @@
             background-color: #ff0000; /* Màu nền để đánh dấu */
             color: #fff; /* Màu chữ trắng */
         }
+        #soluong{
+            font-size:20px;
+           width: 120px;
+           text-align:left;
+           border:1px solid white;
+          
+        }
+        #ibsoluong a{
+            color:black;
 
+        }
+        #size {
+            width: 120px;
+            height: 40px;
+            font-weight: bold;
+        }
+        #thanh{
+
+        width: 0.8px;
+        border: none;
+        height: 40px;
+        background-color: #333;
+        margin:  0;
+        box-sizing: content-box; /* Reset box sizing if needed */
+
+        }
+  
     </style>
 </head>
   <?php
@@ -634,7 +706,7 @@
                             <div class="imglogo"> <img src="./img/logo.jpg" width="90px"  height="102px"  alt="logo"  > </div> 
                             <div class="nameweb" > Web <br> sells <br> shoes </div>
                             </a>
-                        
+                            
                         </button>
                        
             </div>
@@ -643,7 +715,7 @@
                     <div class="operation">
                             <form action="find.php" class="execfind" method="get">
                                         <div class="combb"  >   
-                                            <div id="iconsoftdown">  <img src="./img/sort-down.png" width="20px"  height="20px"  alt="">  </div> 
+                                         
                                             <select id="combobox-options" name="choose">
                                                     <option value="thuonghieu"  <?php 
                                                         if ((isset($_SESSION['bandOrCode'])) && ($_SESSION['bandOrCode'] == "thuonghieu")) {
@@ -698,7 +770,7 @@
                             <div> <img src="./img/<?php if(isset($_SESSION['username'])) echo "account.png";
                                         else echo "enter.png"; ?>" width="25px"  height="25px" alt="account"></div>
                                     <div class="aa" id="nameaccount"> <?php if(isset($_SESSION['username'])) echo $_SESSION['username']; 
-                                        else echo "<a href = 'login'>Đăng nhập </a>";  ?> </div>
+                                        else echo "<a href = 'login.php'>Đăng nhập </a>";  ?> </div>
                             </button>
                         </div>
 
@@ -710,6 +782,7 @@
     <div class="tab">
         <ul id="tabfilter">
             <li id="locgiay">Lọc giày</li>
+            <li><hr id="thanh"></li>
             <a href="giaban.php"><li>Giá bán</li></a>
             <a href="nuocsx.php"><li>Nước sản xuất</li></a>
             <a href="theloai.php"><li>Thể loại</li></a> 
@@ -745,16 +818,13 @@
                             echo "<div id='luachon'> ";
                          
 
-
-                                
-
                                 echo "<div><p> $tengiay </p></div>";
-                                echo "<div id='areaSize'>";
-                                echo "<div id='size'> Kích cỡ</div>";  
+                           
+                               
                                 echo "<div id='btnSize'>";
                                 echo "<ul>";
                                 $kqkt2 = mysqli_query($conn, $sqlCom1);
-
+                                echo "<li id='size'> Kích cỡ</li>";  
 
                                 // echo $soluong;
                                 $dc = "?tensp=".$_GET['tensp']."";
@@ -764,20 +834,9 @@
                                 $selectedSize = ""; // Khởi tạo kích cỡ được chọn
                                 $selectedColor = ""; // Khởi tạo màu sắc được chọn
 
-                                $soluong = isset($_GET['soluong']) ? $_GET['soluong'] : 1;
-                                // if(isset($_GET['soluong'])) 
-                                $dc = $dc."&soluong=".$soluong." ";
-                                
-                                if(isset($_GET['mausac']))
-                                {
-                                    $dc = $dc."&mausac=".$_GET['mausac']."";
-                                 
-                                }
-                                    
-                                if(isset($_GET['kichco']))
-                                    $dc = $dc."&kichco=".$_GET['kichco']."";
+                      
   
-
+                                $soluong = isset($_GET['soluong']) ? $_GET['soluong'] : 1;
 
                                     if(isset($_GET['soluong']))
                                     {
@@ -790,21 +849,25 @@
                                                 {
                                                     $arrdc  = explode("&", $dc);
                                                      $cmd =  "SELECT * FROM khosoluong where  tensp = '$tengiay'";
-                                                     foreach ($arrdc as $value) {
-                                                        $valu  = explode("=", $value);
-                                                        $strcolor = strstr("mausac", $valu[0]);
-                                                        $strsize = strpos("kichco", $valu[0]);
-                                                        if ($strcolor !== false)        
+                                                    //  foreach ($arrdc as $value) {
+                                                    //     $valu  = explode("=", $value);
+                                                        // $strcolor = trim($_GET['mausac']);
+                                                        // strstr("mausac", $valu[0]);
+                                                        // $strsize = trim($_GET['kichco']);
+                                                        // strpos("kichco", $valu[0]);
+                                                        // if ($strcolor !== false) 
+                                                        if (isset($_GET['mausac']))       
                                                             $cmd = $cmd." and color = '".$_GET['mausac']."'";
-                                                        if ($strsize !== false) 
+                                                        if (isset($_GET['kichco'])) 
                                                             $cmd = $cmd." and size = '".$_GET['kichco']."'";
                          
-                                                    }
-                                                   
-                                                 echo "cmd: ".$cmd;
-                                                   
+                                                    // }
+                                           
                                                     $query = mysqli_query($conn, $cmd);
+                                                  
+                                                      
                                                     if ($row = mysqli_fetch_array($query)) {
+                                                    
                                                         if($row['soluong'] > $soluong)
                                                             $soluong++;
                                                         else
@@ -825,6 +888,18 @@
                                 
                                     } else  $soluong = 1;
 
+                                   
+                                    // if(isset($_GET['soluong'])) 
+                                    $dc = $dc."&soluong=".$soluong." ";
+                                    
+                                    if(isset($_GET['mausac']))
+                                    {
+                                        $dc = $dc."&mausac=".$_GET['mausac']."";
+                                     
+                                    }
+                                        
+                                    if(isset($_GET['kichco']))
+                                        $dc = $dc."&kichco=".$_GET['kichco']."";
 
 
                                 
@@ -838,14 +913,16 @@
                          
                                     
                                 }
+                            
                                 echo "</ul>";
-                                echo "</div>";
+                              
                                 echo "</div>";
     
                                 echo "<div id='areaMauSac'>";
-                                echo "<div id='MauSac'> Màu sắc</div>"; 
+                                // echo "<div id='MauSac'> Màu sắc</div>"; 
                                 echo "<div id='btnMauSac'>";
                                 echo "<ul>";
+                                echo "<li id='MauSac'> Màu sắc </li>";
                                 $kqkt2 = mysqli_query($conn, $sqlCom1);
                                 while($row2 = mysqli_fetch_array($kqkt2) )
                                 {
@@ -862,22 +939,19 @@
                                 echo "</div>";
     
                                 echo "<div id='areaSoLuong'>";
-                                echo "<div id='soluong'> Số lượng </div>";
-                         
- 
-                               
-                                echo "<div id='tbsoLuong'> <table> <tr> <th><a href='".$dc."&soluong=".$soluong."&varsl=giam'> - </a></th>  <th> <a href=''> 
+                             
+        
+                                echo "<div id='tbsoLuong'>   <table> <tr> <th id='soluong'> Số lượng </th> <th><a href='".$dc."&soluong=".$soluong."&varsl=giam'> - </a></th>  <th> <a href=''> 
                                 $soluong</a> </th>  <th> <a href='".$dc."&soluong=".$soluong."&varsl=tang'> + </a> </th> </tr> </table> </div>";
                                 
                                 echo "</div>";
     
                                 echo "<div id='btnChange'>";
                                 
-                                if(isset( $_SESSION['username'])) $link = 'giohang.php'.$dc; else $link = 'login.php';
-                                echo "<div id='addInCart'> <a href='$link'> <img src='./img/cart.png' id='them' alt=''> Thêm giày vào giỏ hàng </a> </div>";
+                          
     
-    
-                                echo "<div id='buy'> <a href='bangiay.php'> Mua hàng </a> </div>";
+                              
+                                echo "<div id='buy'> <a href='giohang'> Sửa </a> </div>";
                                 echo "</div>";
     
                             
@@ -888,10 +962,6 @@
 
         }
 
-
-
-
-      
             
                 ?>
 
@@ -911,7 +981,7 @@
         <div id="contact" class="fixsite"><p>Địa chỉ:  Số 30, đường An Dương Vương, phường  Nhơn Phú, tp Quy Nhơn.<br>
                                         Số điện thoại: 034747382. </div>
                     <hr>
-                    <div id="nameweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
+                    <div id="tenweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
     </div>
 </body>
 

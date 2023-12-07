@@ -251,6 +251,13 @@
             overflow:auto;
             
         }
+        .areashowshoes p{
+        
+        text-align: center; /* Center-align text horizontally */
+        position: absolute; 
+        right: 650px;
+        top: 400px; 
+    }
 
 
         .seprapage{
@@ -350,29 +357,31 @@
             
         }
         .footer{
-
             background:#EEDCDC;
-            height: 132px;
-    
+        height: 132px;
+        padding-top: 0;
+        margin-top:0;
+        display: inline-block;
+        width: 100%;
         }
         .footer hr{
             background:#979113;
             height: 1px;
         }
         #contact {
-            height: 100px;
-            
+        height: 80px;
+
         }
         #contact p{
-            text-align: center;
-            line-height: 8vh;
+        text-align: center;
+        line-height: 7vh;
+        color:black;
         }
-        #nameweb{
-            height: 30px;
-            line-height: 1vh;
-        }
-        #nameweb{
-            text-align: center;
+        #tenweb{
+        height: 30px;
+        line-height: 1vh;
+        color:#D47373;
+        text-align: center;
         }
         .fixsite{
             /* position: absolute; 
@@ -408,45 +417,57 @@
         }
 
         .areashowshoes {
-        /* margin: 20px; */
-        background:#ffffff;
-        justify-content: center;
-    align-items: center;
+            width: 100%;
+            height:700px;
+            background: #ffffff;
+            /* display : flex; */
+            flex-direction : row ;
+            /* justify-content : space-around; */
+            flex-flow : wrap;
+            margin: 0;
+            padding: 0;
+            overflow:auto;
         }
 
-        table {
+        /* table {
             width: 100%;
             border-collapse: collapse;
             margin: 0;
             background:#ffffff;
+        } */
+        th, td,tr {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
         }
 
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            /* padding: 8px; */
-            width: 100px;
+        #rowname{
+            width:400px;
         }
-
-        th {
-            background-color: #f2f2f2;
-    font-weight: normal;
-    font-size: 14px;
-    /* padding: 12px;  */
-        
+        th{
+            width:110px;
+            height: 10px;
         }
 
         .aaa {
             font-weight: bold;
+            width:100px;
+            height: 1px;
+            text-align:center;
         }
 
         td:last-child {
             font-style: italic;
+            
         }
 
         /* tr:nth-child(even) {
           
         } */
+        .areashowshoes table{
+            border:2px black;
+            border-collapse: collapse;
+        }
         .areashowshoes p{
                position: absolute; 
             top: 400px; 
@@ -589,7 +610,7 @@
                            echo '  <th class="aaa">Màu sắc</th>';
                            echo '  <th class="aaa">Đơn giá</th>';
                            echo ' <th class="aaa">Tên khách hàng</th>';
-                           echo ' <th class="aaa">Địa chỉ</th>';
+                           echo ' <th id="rowname" class="aaa">Địa chỉ</th>';
                            echo ' <th class="aaa">Số điện thoại</th>';
                            echo '<th class="aaa">Ngày bán</th>';
                            echo ' </tr>';
@@ -608,7 +629,7 @@
                                {
                                    echo "<td> ".$result['fullname']."</td>";
 
-                               echo "<td> ".$result['site']." </td>";
+                               echo "<td id='rowname'> ".$result['site']." </td>";
                                echo "<td> ".$result['numberphone']." </td>";
                                }
                                $dmy = explode("-",$row['ngayban']);
@@ -678,7 +699,7 @@
                     echo '  <th class="aaa">Màu sắc</th>';
                     echo '  <th class="aaa">Đơn giá</th>';
                     echo ' <th class="aaa">Tên khách hàng</th>';
-                    echo ' <th class="aaa">Địa chỉ</th>';
+                    echo ' <th id="rowname" class="aaa">Địa chỉ</th>';
                     echo ' <th class="aaa">Số điện thoại</th>';
                     echo '<th class="aaa">Kiểm tra</th>';
                     echo ' </tr>';
@@ -697,7 +718,7 @@
                         {
                             echo "<td> ".$result['fullname']."</td>";
     
-                        echo "<td> ".$result['site']." </td>";
+                        echo "<td id='rowname'> ".$result['site']." </td>";
                         echo "<td> ".$result['numberphone']." </td>";
                         }
               
@@ -711,12 +732,12 @@
 
              }
 
-               
+               echo " </table>";
 
                
              
     ?>
-        </table>
+       
 
  
 
@@ -750,11 +771,6 @@
 
 
          }
-       
-
-
-                        
-
 
 
         // -----------------------------------------------------------------------------------------------------
@@ -937,8 +953,6 @@
             
                 ?>
 
-
-
     </div>
                 
                 
@@ -958,7 +972,7 @@
                 <div id="contact" class="fixsite"><p>Địa chỉ:  Số 30, đường An Dương Vương, phường  Nhơn Phú, tp Quy Nhơn.<br>
 Số điện thoại: 034747382.</div>
                 <hr>
-                <div id="nameweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
+                <div id="tenweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
     </div>
 </body>
 </html>

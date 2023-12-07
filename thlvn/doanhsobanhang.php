@@ -242,7 +242,7 @@
             width: 100%;
             height:700px;
             background: #ffffff;
-            display : flex;
+            /* display : flex; */
             flex-direction : row ;
             /* justify-content : space-around; */
             flex-flow : wrap;
@@ -251,7 +251,13 @@
             overflow:auto;
             
         }
-
+        .areashowshoes p{
+        
+            text-align: center; /* Center-align text horizontally */
+            position: absolute; 
+            right: 650px;
+            top: 400px; 
+        }
 
         .seprapage{
       
@@ -360,19 +366,19 @@
             height: 1px;
         }
         #contact {
-            height: 100px;
-            
+        height: 80px;
+
         }
         #contact p{
-            text-align: center;
-            line-height: 8vh;
+        text-align: center;
+        line-height: 7vh;
+        color:black;
         }
-        #nameweb{
-            height: 30px;
-            line-height: 1vh;
-        }
-        #nameweb{
-            text-align: center;
+        #tenweb{
+        height: 30px;
+        line-height: 1vh;
+        color:#D47373;
+        text-align: center;
         }
         .fixsite{
             /* position: absolute; 
@@ -420,9 +426,7 @@
             border:2px black;
             border-collapse: collapse;
         }
-        #rowcode{
-            width:150px;
-        }
+    
         #rowname{
             width:400px;
         }
@@ -433,7 +437,7 @@
             width:100px;
             height: 1px;
             text-align:center;
-            background:red;
+            /* background:red; */
         }
     </style>
 </head>
@@ -524,7 +528,7 @@
     </div>
       <div id="classify">
       <ul id="tabTime">
-        <li>Doanh số xếp theo</li>
+        <li>Doanh số sắp xếp theo</li>
         <li><a href="doanhsobanhang.php?option=day">Ngày</a></li>
         <li><a href="doanhsobanhang.php?option=week">Tuần</a></li>
         <li><a href="doanhsobanhang.php?option=month">Tháng</a> </li> 
@@ -1058,7 +1062,7 @@
                 <div id="contact" class="fixsite"><p>Địa chỉ:  Số 30, đường An Dương Vương, phường  Nhơn Phú, tp Quy Nhơn.<br>
 Số điện thoại: 034747382.</div>
                 <hr>
-                <div id="nameweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
+                <div id="tenweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
     </div>
 </body>
 </html>

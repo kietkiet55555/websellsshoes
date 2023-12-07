@@ -255,20 +255,19 @@
         }
 
         .areashowshoes{
-        
             width: 100%;
             height:700px;
             background: #ffffff;
-            display : flex;
+            /* display : flex; */
             flex-direction : row ;
             /* justify-content : space-around; */
             flex-flow : wrap;
             margin: 0;
             padding: 0;
             overflow:auto;
-            
-        }
-
+      
+       
+    }
 
         .seprapage{
       
@@ -367,7 +366,7 @@
             
         }
         .footer{
-
+            
             background:#EEDCDC;
             height: 132px;
     
@@ -377,19 +376,20 @@
             height: 1px;
         }
         #contact {
-            height: 100px;
-            
+        height: 80px;
+
         }
         #contact p{
-            text-align: center;
-            line-height: 8vh;
+        text-align: center;
+        line-height: 7vh;
+        color:black;
         }
-        #nameweb{
-            height: 30px;
-            line-height: 1vh;
-        }
-        #nameweb{
-            text-align: center;
+         
+        #tenweb{
+        height: 30px;
+        line-height: 1vh;
+        color:#D47373;
+        text-align: center;
         }
         .fixsite{
             /* position: absolute; 
@@ -427,7 +427,7 @@
         th, td,tr {
         border: 1px solid #ddd;
         padding: 8px;
-        text-align: left;
+        text-align: center;
         }
         th{
             width:100px;
@@ -436,7 +436,7 @@
         .areashowshoes table{
             border:2px black;
             border-collapse: collapse;
-          /* background:blue; */
+            overflow:auto;
         }
         #rowcode{
             width:150px;
@@ -460,18 +460,22 @@
         }
         #fd{
             display:flex;
+            width:110px;
+            height: 110px;
         }
         #fd a{
             text-decoration: none; 
             width:60px;
-            height: 40px;
+            height: 50px;
             background: #DFD9D9;
             margin:5px;
             color:black;
-          
-            text-align:center;
+            display: flex;
+            justify-content: center; /* Horizontally center */
+            align-items: center; /* Vertically center */
+            text-align: center; /* Center text */
 
-            border-radius:3px;
+            border-radius:2px;
 
         }
     </style>
@@ -742,10 +746,10 @@
                                     }
                                 }
 
-
-
+                               
 
                          }
+                         echo "  </table>";
 
 
                         //     $sqlCom2 = "SELECT * FROM khohang";
@@ -835,75 +839,19 @@
 
 
              ?>
-        </table>
-
-         <?php 
-         
-
-        //  $conn = mysqli_connect("localhost", "root", "", "db.websellsshoes");
-
-        //  if(isset($_GET['nuocsx']))
-        //  {
-
-        //     $sqlCom2 = "SELECT * FROM khohang where '".$_GET['nuocsx']."' = nuocsx";
-        //     $kqkt = mysqli_query($conn, $sqlCom2);
-        //     if (!$kqkt) {
-        //         die("Query failed: " . mysqli_error($conn));
-        //     }
-        //     $i=1;
-        //     while ($row = mysqli_fetch_array($kqkt)) {
-        //         $imgshoes  = $row['anhgiay'];
-        //         $nameshoes = $row['tensp'];
-        //         $priceshoes = $row['giaban'];
-            
-        //         echo '<a href="test.php" class="frameshoes"><img src="./img/adidas/' . (isset($imgshoes) ? $imgshoes : '') . '" alt="anh giay">
-        //         <p>' . (isset($nameshoes) ? $nameshoes : '') . ' </p><p id="price"> ' . (isset($priceshoes) ? $priceshoes : '') . ' </p></a> ';
-            
-        //         if ($i % 5 == 0) {
-        //             echo "<br>";
-        //         }
-        //         $i++;
-        //     }
-
-
-        //  }
-       
-
-
-                        
-
-
-
-        // -----------------------------------------------------------------------------------------------------
-        //  Truy vấn lấy dữ liệu tìm kiếm
-
-        
-      
-            
-                ?>
-
+              
 
 
     </div>
                 
                 
-                <div class="seprapage">
-                    <?php
-                    // Tạo liên kết phân trang
-                    // for ($page = 1; $page <=  $_SESSION['totalPages']; $page++) {
-                            
-                    //         echo '<a href="?page=' . $page . '">' . $page . '</a> ';
-
-                    // }
-                    echo '</div>';
-                    ?>  
-                </div>
+           
 
     <div class="footer">
                 <div id="contact" class="fixsite"><p>Địa chỉ:  Số 30, đường An Dương Vương, phường  Nhơn Phú, tp Quy Nhơn.<br>
-Số điện thoại: 034747382.</div>
+                                                Số điện thoại: 034747382. </p></div>
                 <hr>
-                <div id="nameweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
+                <div id="tenweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
     </div>
 </body>
 </html>

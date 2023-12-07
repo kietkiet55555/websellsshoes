@@ -303,29 +303,34 @@
             margin-top:7px;
         }
         .footer{
-        background:#EEDCDC;
+            background:#EEDCDC;
         height: 132px;
-        padding: 0;
-        margin:0;
+        padding-top: 0;
+        margin-top:0;
+        display: inline-block;
+        width: 100%;
         }
         .footer hr{
         background:#979113;
         height: 1px;
         }
         #contact {
-        height: 100px;
+        height: 80px;
 
         }
         #contact p{
         text-align: center;
-        line-height: 8vh;
+        line-height: 7vh;
+        color:black;
         }
-        #nameweb{
+        #tenweb{
         height: 30px;
         line-height: 1vh;
-        }
-        #nameweb{
+        color:#D47373;
         text-align: center;
+        }
+        #tenweb{
+    
         }
         #numpage{
             height: 70px;
@@ -368,7 +373,7 @@
     th, td,tr {
         border: 1px solid #ddd;
         padding: 8px;
-        text-align: left;
+        text-align: center;
         }
         th{
             width:100px;
@@ -398,20 +403,26 @@
              width:100px;
             height: 100px;
         }
-                #fd{
+              
+         #fd{
             display:flex;
+            width:120px;
+            height: 120px;
         }
+        
         #fd a{
             text-decoration: none; 
             width:60px;
-            height: 40px;
+            height: 50px;
             background: #DFD9D9;
             margin:5px;
             color:black;
-          
-            text-align:center;
+            display: flex;
+            justify-content: center; /* Horizontally center */
+            align-items: center; /* Vertically center */
+            text-align: center; /* Center text */
 
-            border-radius:3px;
+            border-radius:2px;
 
         }
 
@@ -464,12 +475,17 @@
                             $cmdtakenum = "SELECT * FROM khosoluong where tensp = '".$row['tensp']."'";
                             $query  = mysqli_query($conn, $cmdtakenum);
                             $row_count = mysqli_num_rows($kqkt);
-
-                            // echo "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:".$row['tensp'];
+                            $_SESSION['boolean'] = ($row) ? true : false;
+                          
                        }
+                    //    if( $kqkt )
+                    //         echo "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasuccess";
+                    //    else 
+                    //    echo "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafail";
 
-                        $_SESSION['boolean'] = ($row) ? true : false;
+                      
                      
+                    //    echo "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:".$_SESSION['boolean'];
 
                         if (!$kqkt) {
                             die("Query failed: " . mysqli_error($conn));
@@ -601,7 +617,8 @@
                 if(isset($_SESSION['takecharfind']))
                 {
                     
-                 
+                //  echo "hiiiiiiiiiiiiiiiiiiiiiiiiiiiii".$_SESSION['takecharfind'];
+                    //   echo "hiiiiiiiiiiiiiiiiiiiiiiiiiiiii".$currentPage;
                      if(isset($_SESSION['boolean']) && $_SESSION['boolean']){
                         $takecharfind = $_SESSION['takecharfind'];
                         if( $selected=="thuonghieu")
@@ -905,7 +922,7 @@
                 ?>
 
 
-             
+</div>         
     </div>
                 
                 <div id="numpage">
@@ -914,52 +931,52 @@
                     // Tạo liên kết phân trang
                     if(isset($_SESSION['totalPages']))
                     {
-                        if($_SESSION['totalPages']!=1)
-                        {
+                        // if($_SESSION['totalPages']!=1)
+                        // {
                             
-                                // Số trang hiện tại, có thể được truyền từ URL hoặc bất kỳ nguồn nào khác
-                                $current_page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+                        //         // Số trang hiện tại, có thể được truyền từ URL hoặc bất kỳ nguồn nào khác
+                        //         $current_page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 
-                                // Số lượng trang bạn muốn hiển thị
-                                $total_pages = $_SESSION['totalPages'];
+                        //         // Số lượng trang bạn muốn hiển thị
+                        //         $total_pages = $_SESSION['totalPages'];
 
-                                // Số trang sẽ hiển thị trước và sau trang hiện tại
-                                $range = 3;
+                        //         // Số trang sẽ hiển thị trước và sau trang hiện tại
+                        //         $range = 3;
 
-                                echo '<ul class="pagination">';
+                        //         echo '<ul class="pagination">';
 
-                                // Hiển thị liên kết cho các trang
-                                for ($i = max(1, $current_page - $range); $i <= min($current_page + $range, $total_pages); $i++) {
-                                    echo '<li><a href="?page=' . $i . '"';
-                                    if ($i == $current_page) {
-                                        echo ' class="active"'; // Thêm lớp "active" cho trang hiện tại
-                                    }
-                                    echo '>' . $i . '</a></li>';
-                                }
-                                // Hiển thị liên kết "Trang trước" nếu có 3 trang trở lên
-                                if ($total_pages > 3 && $current_page > 1) {
-                                    echo '<li><a href="?page=' . ($current_page - 1) . '">Trước</a></li>';
-                                }
+                        //         // Hiển thị liên kết cho các trang
+                        //         for ($i = max(1, $current_page - $range); $i <= min($current_page + $range, $total_pages); $i++) {
+                        //             echo '<li><a href="?page=' . $i . '"';
+                        //             if ($i == $current_page) {
+                        //                 echo ' class="active"'; // Thêm lớp "active" cho trang hiện tại
+                        //             }
+                        //             echo '>' . $i . '</a></li>';
+                        //         }
+                        //         // Hiển thị liên kết "Trang trước" nếu có 3 trang trở lên
+                        //         if ($total_pages > 3 && $current_page > 1) {
+                        //             echo '<li><a href="?page=' . ($current_page - 1) . '">Trước</a></li>';
+                        //         }
 
-                                // Hiển thị liên kết "Trang tiếp" nếu có 3 trang trở lên và trang hiện tại không phải là trang cuối cùng
-                                if ($total_pages > 3 && $current_page < $total_pages) {
-                                    echo '<li><a href="?page=' . ($current_page + 1) . '">Tiếp</a></li>';
-                                }
-                                echo '</ul>';
+                        //         // Hiển thị liên kết "Trang tiếp" nếu có 3 trang trở lên và trang hiện tại không phải là trang cuối cùng
+                        //         if ($total_pages > 3 && $current_page < $total_pages) {
+                        //             echo '<li><a href="?page=' . ($current_page + 1) . '">Tiếp</a></li>';
+                        //         }
+                        //         echo '</ul>';
 
-                        }
+                        // }
                     }
                     
                     ?>  
                     </div>
                 </div>
  
-    </div>
+    <!-- </div> -->
     <div class="footer">
         <div id="contact" class="fixsite"><p>Địa chỉ:  Số 30, đường An Dương Vương, phường  Nhơn Phú, tp Quy Nhơn.<br>
                                         Số điện thoại: 034747382. </div>
                     <hr>
-                    <div id="nameweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
+                    <div id="tenweb" class="fixsite"><p>Twoteam-WebSellsShoes</p></div>
     </div>
 </body>
 
